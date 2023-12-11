@@ -1,0 +1,68 @@
+body {
+    background-color: #e4d7c5; /* uma cor de pergaminho mais escura */
+    font-family: 'Times New Roman', serif;
+    color: #5e4223;
+}
+
+.container {
+    background-color: #fff5e6;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+h1 {
+    color: #8b4513;
+    text-align: center;
+    font-style: italic;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #6e4c1e;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 6px 12px;
+}
+
+/* Estilo específico para sobrescrever o Bootstrap */
+.btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: #8b4513 !important; /* Cor marrom rústica */
+    border-color: #8b4513 !important; /* Cor da borda do botão */
+    color: #fff !important; /* Cor do texto */
+}
+
+.btn-primary:hover {
+    background-color: #6e4c1e !important; /* Cor marrom mais escura ao passar o mouse */
+    border-color: #6e4c1e !important;
+}
+
+.button-container {
+    text-align: right; /* Alinha o conteúdo à direita */
+}
+
+#wineQualityResult {
+    margin-top: 20px; /* Espaçamento acima da div */
+    padding: 15px; /* Espaçamento interno da div */
+    background-color: #f8ecd4; /* Cor de fundo - tom claro que se destaca no container */
+    border: 1px solid #8b4513; /* Borda marrom para um visual rústico */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para um efeito 3D sutil */
+    text-align: center; /* Texto centralizado */
+    font-size: 20px; /* Tamanho da fonte para destaque */
+    color: #8b4513; /* Cor da fonte marrom escura */
+    font-weight: bold; /* Fonte em negrito */
+    font-family: 'Times New Roman', serif; /* Estilo de fonte clássico */
+    display: none; /* Inicialmente, a div não é exibida */
+}
+
+
+
+
