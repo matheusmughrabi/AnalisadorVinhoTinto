@@ -1,55 +1,79 @@
-const limitesAceitaveis = {
-    fixedAcidity: { min: 7.1, max: 9.2 },
-    volatileAcidity: { min: 0.39, max: 0.64 },
-    chlorides: { min: 0.07, max: 0.09 },
-    totalSulfurDioxide: { min: 22, max: 62 },
-    sulphates: { min: 0.62, max: 0.73 },
-    alcohol: { min: 9.5, max: 10.2 }
-};
+class PropriedadesVinho {
+    constructor(name, min, max) {
+        this.name = name;
+        this.min = min;
+        this.max = max;
+    }
 
-$(document).ready(function() {
-    Object.keys(limitesAceitaveis).forEach(campo => {
-        $(`#${campo}`).on('input', function() {
-            const valor = parseFloat($(this).val());
-            const { min, max } = limitesAceitaveis[campo];
+    ehValido(value) {
+        return value >= this.min && value <= this.max;
+    }
 
-            if (valor < min || valor > max) {
-                // Mostra o alerta se o valor estiver fora dos limites
-                $(`#${campo}Alert`).remove();
-                $(this).after(`<p id="${campo}Alert" style="color: red;">Valor fora do limite aceitável de ${min} - ${max}</p>`);
-            } else {
-                $(`#${campo}Alert`).remove();
-            }
+    mostrarAviso(element) {
+        if (!this.ehValido(parseFloat(element.val()))) {
+            element.siblings(`#${this.name}Alert`).remove();
+            element.after(`<p id="${this.name}Alert" style="color: red;">Valor fora do limite aceitável de ${this.min} - ${this.max}</p>`);
+        } else {
+            element.siblings(`#${this.name}Alert`).remove();
+        }
+    }
+}
+
+class PropriedadesVinhoForm {
+    constructor(properties, apiUrl) {
+        this.properties = properties;
+        this.apiUrl = apiUrl;
+        this.formData = {};
+    }
+
+    inicializar() {
+        Object.values(this.properties).forEach(property => {
+            $(`#${property.name}`).on('input', function() {
+                property.mostrarAviso($(this));
+            });
         });
-    });
 
-    $('#wineQualityForm').on('submit', function(e) {
-        e.preventDefault(); // Impede o envio normal do formulário
+        $('#wineQualityForm').on('submit', (e) => this.submeter(e));
+    }
 
-        // var formData = $(this).serialize(); // Serializa os dados do formulário
+    submeter(e) {
+        e.preventDefault();
 
-        var formData = {
-            fixedAcidity: $('#fixedAcidity').val(),
-            volatileAcidity: $('#volatileAcidity').val(),
-            chlorides: $('#chlorides').val(),
-            totalSulfurDioxide: $('#totalSulfurDioxide').val(),
-            sulphates: $('#sulphates').val(),
-            alcohol: $('#alcohol').val(),
-        };
+        this.formData = Object.fromEntries(Object.values(this.properties).map(property => {
+            return [property.name, $(`#${property.name}`).val()];
+        }));
 
         $.ajax({
             type: "POST",
-            url: appConfig.apiUrl, // Substitua com a URL da sua API
+            url: this.apiUrl,
             contentType: "application/json",
-            data: JSON.stringify(formData),
-            success: function(response) {
-                $('#wineQualityResult').text('Qualidade do Vinho: ' + response.QualidadeDoVinho)
-                .css('display', 'block'); // Torna a div visível
-            },
-            error: function(xhr, status, error) {
-                // Lide com erros aqui
-                console.error(error);
-            }
+            data: JSON.stringify(this.formData),
+            success: (response) => this.executarFluxoSucesso(response),
+            error: (xhr, status, error) => this.executarFluxoErro(error)
         });
-    });
+    }
+
+    executarFluxoSucesso(response) {
+        $('#wineQualityResult').text('Qualidade do Vinho: ' + response.QualidadeDoVinho)
+            .css('display', 'block');
+    }
+
+    executarFluxoErro(error) {
+        console.error(error);
+    }
+}
+
+$(document).ready(function() {
+    const properties = {
+        fixedAcidity: new PropriedadesVinho('fixedAcidity', 7.1, 9.2),
+        volatileAcidity: new PropriedadesVinho('volatileAcidity', 0.39, 0.64),
+        chlorides: new PropriedadesVinho('chlorides', 0.07, 0.09),
+        totalSulfurDioxide: new PropriedadesVinho('totalSulfurDioxide', 22, 62),
+        sulphates: new PropriedadesVinho('sulphates', 0.62, 0.73),
+        alcohol: new PropriedadesVinho('alcohol', 9.5, 10.2),
+    };
+
+    const apiUrl = appConfig.apiUrl; // Substitua com a URL da sua API
+    const wineQualityForm = new PropriedadesVinhoForm(properties, apiUrl);
+    wineQualityForm.inicializar();
 });

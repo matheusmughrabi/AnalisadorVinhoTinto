@@ -1,32 +1,28 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import pandas as pd
-import pickle
+from injector import Injector
+from IoC.container_injecao_dependencia import AppModule
+from dtos.vinho_dto import VinhoDto
+from core.modelo_preditivo_interface import ModeloPreditivoInterface
 
+# Inicialização do aplicativo Flask
 app = Flask(__name__)
 CORS(app)
+injector = Injector(AppModule())
 
-# Carregar o modelo preditivo
-model = pickle.load(open('modelo_preditivo.pkl', 'rb'))
-
-@app.route('/predict', methods=['POST'])
-def predict():
-    print("teste")
-    # Obter dados do POST request
-    data = request.get_json(force=True)
-
-    # Converter dados em DataFrame
-    prediction_data = pd.DataFrame([data])
-
-    prediction_data.columns = ['fixed acidity', 'volatile acidity', 'chlorides', 'total sulfur dioxide', 'sulphates', 'alcohol']
-
-    # Fazer a predição
-    prediction = model.predict(prediction_data)
-
-    response_data = {'QualidadeDoVinho': prediction[0]}
-
-    # Enviar de volta a predição como resposta JSON
-    return jsonify(response_data)
+@app.route('/prever', methods=['POST'])
+def gerarPrevisao():
+    modelo_preditivo = injector.get(ModeloPreditivoInterface)  # Obter o preditor do container
+    
+    dados = request.get_json(force=True)
+    
+    vinho_dto = VinhoDto(**dados)
+    
+    qualidade = modelo_preditivo.prever_qualidade(vinho_dto)
+    
+    resposta = {'QualidadeDoVinho': qualidade}
+    
+    return jsonify(resposta)
 
 if __name__ == '__main__':
     app.run(debug=True)
