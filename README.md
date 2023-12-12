@@ -66,6 +66,9 @@ Rota da API
 - O modelo preditivo é injetado usando a injeção de dependências, promovendo a inversão de dependência.
 - O resultado da predição é retornado como um JSON contendo a qualidade prevista do vinho.
 
+Testes unitários
+- Os testes de unidade podem ser encontrados no arquivo desempenho_modelo_testes.py
+
 ## Requisitos e como executar<a name = "requisitos"></a>
 ### Requisitos
 1. git instalado
