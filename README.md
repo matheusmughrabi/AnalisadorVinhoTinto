@@ -76,7 +76,7 @@ Testes unitários
 3. [Opcional] Algum gerenciador de pacotes python como virtualenv para facilitar a criação de um ambiente virtual ([virtualenv](https://virtualenv.pypa.io/en/latest/installation.html))
 
 ### Como executar
-1. git clone [https://github.com/matheusmughrabi/fast-menu-api.git](https://github.com/matheusmughrabi/AnalisadorVinhoTinto.git)
+1. git clone [https://github.com/matheusmughrabi/AnalisadorVinhoTinto.git](https://github.com/matheusmughrabi/AnalisadorVinhoTinto.git)
 2. Abra o terminal no diretório relativo a raiz do projeto: .\WebApi\src
 3. [Opcional] Crie o ambiente virtual
 4. [Opcional] Ative o ambiente virtual
