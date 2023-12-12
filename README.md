@@ -96,8 +96,12 @@ Testes unitários
 Até o momento nosso modelo de inteligência artificial só é capaz de prever a qualidade de vinhos tinto.
 
 ## Observação sobre Desenvolvimento de software seguro
-A aplicação de técnicas e práticas de Desenvolvimento de Software Seguro é fundamental para garantir a confidencialidade, integridade e disponibilidade dos dados e sistemas. No contexto desta aplicação, várias práticas podem ser implementadas para aumentar a segurança.
+A aplicação de técnicas e práticas de Desenvolvimento de Software Seguro é fundamental para garantir a confidencialidade, integridade e disponibilidade dos dados e sistemas. 
+
+No contexto desta aplicação, várias práticas podem ser implementadas para aumentar a segurança.
+
 Nota-se que a presente aplicação é muito simples e não trabalha com dados sensíveis de usuários, entretanto é importante considerar boas práticas de desenvolvimento seguro (imagine que a aplicação poderá crescer no futuro e guardar dados sensíveis de usuários e/ou empresas).
+
 Segue uma pequena lista de pontos a se considerar.
 
 1. Anonimização de Dados
