@@ -2,7 +2,7 @@ import pickle
 from core.modelo_preditivo_vinho_tinho import ModeloPreditivoVinhoTinto
 from dtos.vinho_dto import VinhoDto
 import pytest
-from sklearn.metrics import accuracy_score, precision_score, recall_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 # Dados de teste
 dados_teste = [
@@ -34,7 +34,7 @@ def test_precisao_modelo():
     precisao = precision_score(qualidades_esperadas, previsoes, average='weighted')
     assert precisao > 0.75
 
-def test_recall_modelo():
+def test_f1_score_modelo():
     previsoes = [modelo.prever_qualidade(vinho_dto) for vinho_dto in dados_teste_dto]
-    recall = recall_score(qualidades_esperadas, previsoes, average='weighted')
-    assert recall > 0.75
+    f1 = f1_score(qualidades_esperadas, previsoes, average='weighted')
+    assert f1 > 0.75
