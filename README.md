@@ -79,7 +79,22 @@ Primeiramente faça o clone do repositório: git clone [https://github.com/mathe
 2. Abra o terminal no diretório relativo a raiz do projeto: .\WebApi\src
 3. Execute o comando pytest test_modelo_preditivo.py
 
+## Limitações<a name = "limitacoes"></a>
+Até o momento nosso modelo de inteligência artificial só é capaz de prever a qualidade de vinhos tinto.
 
+## Observações <a name = "observacoes"></a>
+Conforme descrito no notebook o modelo só é capaz de realizar previsões confiáveis se os seguintes limites forem respeitados na variáveis independentes:
+- Acidez Fixa: 7.1 a 9.2 g/dm³
+
+- Acidez Volátil: 0.39 a 0.64 g/dm³
+
+- Cloretos: 0.07 a 0.09 g/dm³
+
+- Dióxido de Enxofre Total: 22 a 62 mg/dm³
+
+- Sulfatos: 0.62 a 0.73 g/dm
+
+- Álcool: 9.5 a 10.2 %vol
 
 ## Reflexão sobre Desenvolvimento de software seguro
 *Conforme solicitado nos critérios de avaliação do MVP, segue uma breve reflexão sobre como boas práticas de desenvolvimento de software seguro podem ser aplicadas a este projeto.*
@@ -117,20 +132,3 @@ Implementação: Realizar testes de segurança regulares, como testes de penetra
 **Conclusão**
 A aplicação destas práticas de Desenvolvimento de Software Seguro é essencial para esta e outras aplicações. 
 É importante notar que a segurança é um processo contínuo e deve ser considerada em todas as fases do desenvolvimento e manutenção do software.
-
-## Limitações<a name = "limitacoes"></a>
-Até o momento nosso modelo de inteligência artificial só é capaz de prever a qualidade de vinhos tinto.
-
-## Observações <a name = "observacoes"></a>
-Conforme descrito no notebook o modelo só é capaz de realizar previsões confiáveis se os seguintes limites forem respeitados na variáveis independentes:
-- Acidez Fixa: 7.1 a 9.2 g/dm³
-
-- Acidez Volátil: 0.39 a 0.64 g/dm³
-
-- Cloretos: 0.07 a 0.09 g/dm³
-
-- Dióxido de Enxofre Total: 22 a 62 mg/dm³
-
-- Sulfatos: 0.62 a 0.73 g/dm
-
-- Álcool: 9.5 a 10.2 %vol
