@@ -79,10 +79,11 @@ Primeiramente faça o clone do repositório: git clone [https://github.com/mathe
 2. Abra o terminal no diretório relativo a raiz do projeto: .\WebApi\src
 3. Execute o comando pytest test_modelo_preditivo.py
 
-## Limitações<a name = "limitacoes"></a>
-Até o momento nosso modelo de inteligência artificial só é capaz de prever a qualidade de vinhos tinto.
+
 
 ## Observação sobre Desenvolvimento de software seguro
+*Conforme solicitado nos critérios de avaliação do MVP, segue uma breve reflexão sobre como boas práticas de desenvolvimento de software seguro podem ser aplicadas a este projeto.*
+
 A aplicação de técnicas e práticas de Desenvolvimento de Software Seguro é fundamental para garantir a confidencialidade, integridade e disponibilidade dos dados e sistemas. 
 
 No contexto desta aplicação, várias práticas podem ser implementadas para aumentar a segurança.
@@ -116,6 +117,9 @@ Implementação: Realizar testes de segurança regulares, como testes de penetra
 **Conclusão**
 A aplicação destas práticas de Desenvolvimento de Software Seguro é essencial para esta e outras aplicações. 
 É importante notar que a segurança é um processo contínuo e deve ser considerada em todas as fases do desenvolvimento e manutenção do software.
+
+## Limitações<a name = "limitacoes"></a>
+Até o momento nosso modelo de inteligência artificial só é capaz de prever a qualidade de vinhos tinto.
 
 ## Observações <a name = "observacoes"></a>
 Conforme descrito no notebook o modelo só é capaz de realizar previsões confiáveis se os seguintes limites forem respeitados na variáveis independentes:
