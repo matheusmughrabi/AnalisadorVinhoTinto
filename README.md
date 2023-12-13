@@ -69,6 +69,10 @@ Rota da API
 Testes unitários
 - Os testes de unidade podem ser encontrados no arquivo desempenho_modelo_testes.py
 
+#### Modelo preditivo
+Utilizei o google colab para criar o notebook do modelo preditivo.
+Segue o link do notebook, onde você encontrará todo o passo a passo para construção do modelo: https://colab.research.google.com/github/matheusmughrabi/AnalisadorVinhoTinto/blob/master/Classificador_de_vinhos.ipynb
+
 ## Requisitos e como executar<a name = "requisitos"></a>
 ### Requisitos
 1. git instalado
