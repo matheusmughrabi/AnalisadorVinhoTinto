@@ -59,7 +59,7 @@ class PropriedadesVinhoForm {
     }
 
     executarFluxoErro(error) {
-        console.error(error);
+        alert('Ocorreu um erro ao submeter formulário.')
     }
 }
 
