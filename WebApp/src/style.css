@@ -51,8 +51,8 @@ h1 {
 #wineQualityResult {
     margin-top: 20px; /* Espaçamento acima da div */
     padding: 15px; /* Espaçamento interno da div */
-    background-color: #f8ecd4; /* Cor de fundo - tom claro que se destaca no container */
-    border: 1px solid #8b4513; /* Borda marrom para um visual rústico */
+    background-color: #f2ebe5; /* Cor de fundo - tom claro que se destaca no container */
+    border: 1px solid #ccc;
     border-radius: 10px; /* Cantos arredondados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para um efeito 3D sutil */
     text-align: center; /* Texto centralizado */
@@ -63,6 +63,24 @@ h1 {
     display: none; /* Inicialmente, a div não é exibida */
 }
 
+.intro-section {
+    background-color: #f2ebe5;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px; /* Espaço entre a seção de introdução e o formulário */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    color: #5e4223;
+}
 
+.intro-section h2 {
+    color: #8b4513;
+    margin-bottom: 15px;
+    text-align: center;
+}
 
-
+.intro-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify; /* Para uma leitura mais fluida */
+}

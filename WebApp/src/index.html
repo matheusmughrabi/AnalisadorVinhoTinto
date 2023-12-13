@@ -9,7 +9,15 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Predição de Qualidade de Vinho</h1>
+        <div class="intro-section">
+            <h2>Predição de Qualidade de Vinho</h2>
+            <p>Utilize o formulário abaixo para prever a qualidade do vinho que você está fabricando.</p>
+            <p>Nós utilizamos um modelo de inteligência artificial para entregar os resultados.</p>
+            <p>Nota-se que o modelo, apesar de ter boa precisão, pode ocasionalmente entregar resultados errados e deve ser usado apenas como uma ferramenta para auxiliar seu processo de fabricação.</p>
+            <p>Atente-se aos limites aceitáveis de cada campo do formulário. Não impediremos você de fazer previsões com valores fora dos limites (só informaremos no formulário), mas o modelo perde confiabilidade conforme você se afastar dos limites aceitáveis.</p>
+        </div>
+        
+
         <form action="/predict" method="post" class="mt-4" id="wineQualityForm">
 
             <div class="form-group">
