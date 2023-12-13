@@ -22,6 +22,8 @@ Segue alguns detalhes sobre a implementação:
 - Validação de Entrada: Scripts JavaScript validam os dados inseridos nos campos do formulário, exibindo um aviso se os valores estiverem fora dos limites aceitáveis.
 - Arquivo de Configuração (config.js): Contém a URL do back-end Flask API, facilitando a manutenção e atualização da URL da API.
 
+**Observação:** Você encontrará uma descrição detalhada sobre os limites aceitáveis das variáveis do modelo na seção Análise Exploratória de Dados (EDA) do notebook Classificador_de_vinhos.ipynb
+
 ### Web Api
 #### Tecnologias e Frameworks Utilizados
 - Flask: Framework web utilizado para construir a API.
@@ -41,7 +43,7 @@ Modelo Swagger
 - Um modelo Swagger é definido para VinhoDto, especificando os campos e tipos de dados esperados na requisição. Isso inclui acidez fixa, acidez volátil, cloretos, dióxido de enxofre total, sulfatos e álcool.
 
 Rota da API
-- Endpoint /prever: Rota POST que recebe os dados de entrada, valida-os e passa para o modelo preditivo.
+- Endpoint *prever*: Rota POST que recebe os dados de entrada, valida-os e passa para o modelo preditivo.
 - A rota utiliza VinhoDto para a validação dos dados de entrada.
 - O modelo preditivo é injetado usando a injeção de dependências, promovendo a inversão de dependência.
 - O resultado da predição é retornado como um JSON contendo a qualidade prevista do vinho.
@@ -60,16 +62,17 @@ Segue o link do notebook, onde você encontrará todo o passo a passo para const
 3. [Opcional] Algum gerenciador de pacotes python como virtualenv para facilitar a criação de um ambiente virtual ([virtualenv](https://virtualenv.pypa.io/en/latest/installation.html))
 
 ### Como executar
+Primeiramente faça o clone do repositório: git clone [https://github.com/matheusmughrabi/AnalisadorVinhoTinto.git](https://github.com/matheusmughrabi/AnalisadorVinhoTinto.git)
+
 #### WebApp
 1. Abra o index.html que se encontra no diretório .\WebApp\src
 
 #### WebApi
-1. git clone [https://github.com/matheusmughrabi/AnalisadorVinhoTinto.git](https://github.com/matheusmughrabi/AnalisadorVinhoTinto.git)
-2. Abra o terminal no diretório relativo a raiz do projeto: .\WebApi\src
-3. [Opcional] Crie o ambiente virtual
-4. [Opcional] Ative o ambiente virtual
-5. Execute o comando pip install -r requirements.txt
-6. Execute o comando flask run --host 0.0.0.0 --port 5000 IMPORTANTE EXECUTAR COM A PORTA 5000 POIS O PROJETO WebApp ESTÁ APONTANDO PARA ESTA PORTA
+1. Abra o terminal no diretório relativo a raiz do projeto: .\WebApi\src
+2. [Opcional] Crie o ambiente virtual
+3. [Opcional] Ative o ambiente virtual
+4. Execute o comando pip install -r requirements.txt
+5. Execute o comando flask run --host 0.0.0.0 --port 5000 IMPORTANTE EXECUTAR COM A PORTA 5000 POIS O PROJETO WebApp ESTÁ APONTANDO PARA ESTA PORTA
 
 #### Testes de unidade
 1. Prepare o ambiente virtual preparado conforme explicado na seção anterior
