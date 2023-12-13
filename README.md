@@ -81,7 +81,7 @@ Primeiramente faça o clone do repositório: git clone [https://github.com/mathe
 
 
 
-## Observação sobre Desenvolvimento de software seguro
+## Reflexão sobre Desenvolvimento de software seguro
 *Conforme solicitado nos critérios de avaliação do MVP, segue uma breve reflexão sobre como boas práticas de desenvolvimento de software seguro podem ser aplicadas a este projeto.*
 
 A aplicação de técnicas e práticas de Desenvolvimento de Software Seguro é fundamental para garantir a confidencialidade, integridade e disponibilidade dos dados e sistemas. 
